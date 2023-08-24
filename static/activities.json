@@ -1,5 +1,12 @@
 [
   {
+    "type": "pills",
+    "content": {
+      "text": "do stuff",
+      "answer": "bla fff 444bla"
+    }
+  },
+  {
     "type": "quad",
     "content": {
       "text": "bla bla bla",
