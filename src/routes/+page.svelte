@@ -6,13 +6,15 @@
   import Pills from "$lib/components/Pills.svelte";
   import Quad from "$lib/components/Quad.svelte";
 
-  async function fetchData() {
+  let selectedOption = null; // This will store the selected option from Quad component
+  let isPillsAnswerCorrect = false; // Variable to keep track of the Pills component's answer
+
+  onMount(async () => {
     try {
       const response = await fetch("/activities.json");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
       activities.set(await response.json());
     } catch (error) {
       console.error(
@@ -20,13 +22,51 @@
         error.message
       );
     }
+  });
+
+  function handleOptionSelected(event) {
+    selectedOption = event.detail; // Capture the selected option index from the Quad component
   }
 
-  onMount(fetchData);
+  function handleAnswerSelectedForPills(event) {
+    isPillsAnswerCorrect = event.detail;
+  }
 
   function nextSlide() {
-    if ($currentActivityIndex < $activities.length - 1) {
-      $currentActivityIndex += 1;
+    if ($activities[$currentActivityIndex].type === "quad") {
+      const correctAnswer = $activities[$currentActivityIndex].content.answer;
+      if (selectedOption === correctAnswer) {
+        alert("Correct!");
+
+        // Move to the next activity
+        if ($currentActivityIndex < $activities.length - 1) {
+          $currentActivityIndex += 1;
+        } else {
+          alert("You've finished all activities!");
+        }
+      } else {
+        alert("Incorrect. Try again.");
+      }
+    } else if ($activities[$currentActivityIndex].type === "pills") {
+      if (isPillsAnswerCorrect) {
+        alert("Correct!");
+
+        // Move to the next activity
+        if ($currentActivityIndex < $activities.length - 1) {
+          $currentActivityIndex += 1;
+        } else {
+          alert("You've finished all activities!");
+        }
+      } else {
+        alert("Incorrect. Try again.");
+      }
+    } else {
+      // Handle other types if needed
+      if ($currentActivityIndex < $activities.length - 1) {
+        $currentActivityIndex += 1;
+      } else {
+        alert("You've finished all activities!");
+      }
     }
   }
 </script>
@@ -35,9 +75,15 @@
   {#if $activities[$currentActivityIndex].type === "lesson"}
     <Lesson data={$activities[$currentActivityIndex].content} />
   {:else if $activities[$currentActivityIndex].type === "pills"}
-    <Pills data={$activities[$currentActivityIndex].content} />
+    <Pills
+      on:answerSelected={handleAnswerSelectedForPills}
+      data={$activities[$currentActivityIndex].content}
+    />
   {:else if $activities[$currentActivityIndex].type === "quad"}
-    <Quad data={$activities[$currentActivityIndex].content} />
+    <Quad
+      on:optionSelected={handleOptionSelected}
+      data={$activities[$currentActivityIndex].content}
+    />
   {/if}
 {:else}
   <p>Loading...</p>

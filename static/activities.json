@@ -2,36 +2,191 @@
   {
     "type": "pills",
     "content": {
-      "text": "do stuff",
-      "answer": "bla fff 444bla"
+      "text": "Formulate the command to add 'apple' to a list named 'fruits'.",
+      "answer": "fruits.append( 'apple' )"
     }
   },
   {
     "type": "quad",
     "content": {
-      "text": "bla bla bla",
-      "options": ["bla bla bla", "bla bla bla", "bla bla bla", "bla bla bla"],
+      "text": "What is the correct way to write out a print statement?",
+      "options": [
+        "print \"Hello World\"",
+        "print(\"Hello World\")",
+        "print(\"Hello World')",
+        "(\"Hello World\")"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "What does int store?",
+      "options": [
+        "0's and 1's",
+        "Integers",
+        "Boolean",
+        "The initials of a variable"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "What stores true and false values?",
+      "options": ["Boolean", "Bits", "Integers", "They can't be stored"],
       "answer": 0
     }
   },
   {
-    "type": "lesson",
+    "type": "quad",
     "content": {
-      "text": "bla bla bla"
+      "text": "How would you insert new lines into a print statement?",
+      "options": ["\\n", "Using the enter key", "\\enter", "Not possible"],
+      "answer": 0
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "How would you write an input statement with print functions?",
+      "options": [
+        "print(input(\"Randomtext\"))",
+        "input(print(\"Randomtext\"))",
+        "input(\"Randomtext\")",
+        "input print(\"Randomtext\")"
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "Which is a correct example of a camel case variable name?",
+      "options": [
+        "placehold = \"Wow\"",
+        "placeHold = \"Wow\"",
+        "Place Hold = \"Wow\"",
+        "None of the above"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "What is a while loop used for?",
+      "options": [
+        "To create more complex if/else statements",
+        "To repeat a specific section of code until a condition is met",
+        "To modify a block of code under certain conditions",
+        "Don't know didn't study"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "What do imports do?",
+      "options": [
+        "Import blocks of code from GitHub",
+        "Grab program from software on the computer",
+        "Makes code from some modules available",
+        "Imports Visual Studio Code extension"
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "What is an example of a functioning import statement?",
+      "options": [
+        "from time import sleep",
+        "import random",
+        "import os",
+        "All of the above"
+      ],
+      "answer": 3
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "How would a list be written?",
+      "options": [
+        "my_list(1, 2, 3, 4, 5)",
+        "my_list 1, 2, 3, 4, 5",
+        "my_list = (\"1, 2, 3, 4, 5\"):",
+        "my_list = [1, 2, 3, 4, 5]"
+      ],
+      "answer": 3
+    }
+  },
+  {
+    "type": "quad",
+    "content": {
+      "text": "What does the statement import random do?",
+      "options": [
+        "Allows the code to run random sequences of numbers",
+        "Lets random code make sense",
+        "Imports random comments",
+        "Allows for the programmer to import random programs"
+      ],
+      "answer": 0
+    }
+  },
+
+  {
+    "type": "pills",
+    "content": {
+      "text": "Arrange the segments to print 'Hello, World!' in Python.",
+      "answer": "print( 'Hello, World!' )"
     }
   },
   {
     "type": "pills",
     "content": {
-      "answer": "bla bla bla"
+      "text": "Construct the code to assign the number 10 to a variable named 'number'.",
+      "answer": "number = 10"
     }
   },
   {
-    "type": "quad",
+    "type": "pills",
     "content": {
-      "text": "bla bla bla",
-      "options": ["bla bla bla", "bla bla bla", "bla bla bla", "bla bla bla"],
-      "answer": 0
+      "text": "Build the code to increment the value of 'count' by 1.",
+      "answer": "count += 1"
+    }
+  },
+  {
+    "type": "pills",
+    "content": {
+      "text": "Assemble the Python command to check if 'x' is greater than 'y'.",
+      "answer": "if x > y :"
+    }
+  },
+  {
+    "type": "pills",
+    "content": {
+      "text": "Construct the code to define a function called 'greet' that prints 'Hi there!'.",
+      "answer": "def greet():\n\tprint( 'Hi there!' )"
+    }
+  },
+  {
+    "type": "pills",
+    "content": {
+      "text": "Create the Python line that initializes an empty list named 'items'.",
+      "answer": "items = []"
+    }
+  },
+  {
+    "type": "pills",
+    "content": {
+      "text": "Formulate the command to add 'apple' to a list named 'fruits'.",
+      "answer": "fruits.append( 'apple' )"
     }
   }
 ]
